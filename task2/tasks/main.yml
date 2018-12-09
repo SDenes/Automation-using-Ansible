@@ -1,0 +1,36 @@
+
+ - name: Stop and disable service
+   command: systemctl stop httpd.service
+   command: systemctl disable httpd.service
+
+ - name: Reboot...
+   reboot:
+       reboot_timeout: 3600
+ 
+ - name: Do changes
+   command: systemctl status "service_name".service
+   command: ps -aux | grep "service_name"
+   command: systemctl start "service_name".service
+   command: systemctl status "service_name".service
+   command: ps -aux | grep "service_name"
+   command: systemctl stop "service_name".service
+   command: systemctl status "service_name".service
+   command: ps -aux | grep "service_name"
+   command: systemctl enable "service_name".service
+ 
+ - name: Reboot
+   reboot:
+       reboot_timeout: 3600
+ 
+ - name: Status
+   command: systemctl status "service_name".service
+   command: ps -aux | grep "service_name"
+   command: systemctl disable "service_name".service
+  
+ - name: Reboot
+   reboot:
+       reboot_timeout: 3600
+
+ - name: Status
+   command: systemctl status "service_name".service
+   command: ps -aux | grep "service_name"

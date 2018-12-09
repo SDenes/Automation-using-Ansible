@@ -1,0 +1,7 @@
+---
+ - name: Starting...
+   hosts: 192.168.0.24
+   vars:
+    - service_name: httpd
+   roles:
+           - task2 
